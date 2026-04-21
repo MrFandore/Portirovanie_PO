@@ -1,0 +1,39 @@
+fn complex_math(n: i32, x: f64, y: f64) -> f64 {
+    // базовые операции
+    let add = x + y;
+    let sub = x - y;
+    let mul = x * y;
+
+    // защита от деления на ноль
+    let div = if y != 0.0 { x / y } else { 0.0 };
+
+    // степень
+    let power = x.powi(2) + y.powi(3);
+
+    // факториал
+    fn factorial(k: i32) -> i32 {
+        if k <= 1 {
+            1
+        } else {
+            k * factorial(k - 1)
+        }
+    }
+
+    let fact = factorial(n);
+
+    // фибоначчи
+    fn fibonacci(k: i32) -> i32 {
+        if k <= 1 {
+            k
+        } else {
+            fibonacci(k - 1) + fibonacci(k - 2)
+        }
+    }
+
+    let fib = fibonacci(n);
+
+    // итоговая формула
+    let result = add + sub + mul + div + power as f64 + fact as f64 + fib as f64;
+
+    result
+}
