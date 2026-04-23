@@ -1,3 +1,6 @@
+## Ссылка на репозиторий гитхаб:
+**https://github.com/MrFandore/Portirovanie_PO**
+
 # Задание 1-3 (Рабочая тетрадь 1)
 
 ## Задание 1 (Рабочая тетрадь 1)
@@ -122,11 +125,11 @@ python universal_translator.py python java sieve.py
 
 **Листинг кода:**
 
-Исходный код транслятора: [universal_translator.py](PR1_1/universal_translator.py)
+Исходный код транслятора: [universal_translator.py](Prac1/PR1_1/universal_translator.py)
 
-Исходный код входного файла (показанного выше): [sieve.py](PR1_1/sieve.py)
+Исходный код входного файла (показанного выше): [sieve.py](Prac1/PR1_1/sieve.py)
 
-Выходной код транслятора: [output.java](PR1_1/OutputCode/output.java)
+Выходной код транслятора: [output.java](Prac1/PR1_1/OutputCode/output.java)
 
 ---
 
@@ -135,25 +138,25 @@ python universal_translator.py python java sieve.py
 
 Для решения данного задания было написанно приложение на языке Python для обработки текста
 
-Листинг кода прилогается: [text_processor.py](PR1_2/text_processor.py)
+Листинг кода прилогается:  [text_processor.py](Prac1/PR1_2/text_processor.py)
 
-Работа кода на данном примере текста: [test.txt](PR1_2/test.txt)
+Работа кода на данном примере текста: [test.txt](Prac1/PR1_2/test.txt)
 ![5.png](Prac1/photos/5.png)
 
 Далее с помошью написанного транслятора кода реализуем перевод кода на язык Java с помошью данной команды: 
 ```
 python universal_translator.py python java text_processor.py
 ```
-В результате мы получили программу на языке java [output.java](PR1_2/output.java)
+В результате мы получили программу на языке java [output.java](Prac1/PR1_2/output.java)
 
 ---
 
 ## Задание 3 (Рабочая тетрадь 1)
 **Задача: Написать программу, которая автоматически переводит простые математические функции, написанные на Python, на Java. Программа должна принимать на вход исходный код на Python, анализировать его и генерировать эквивалентный код на Java. Программа должна поддерживать базовые математические операции, такие как сложение, вычитание, умножение, деление, возведение в степень, а также простые функции, такие как вычисление факториала или ряда Фибоначчи.**
 
-Опять же для реализации данной задачи был выбран путь использования уже существующего инструмената [universal_translator.py](PR1_1/universal_translator.py) описанного выше.
+Опять же для реализации данной задачи был выбран путь использования уже существующего инструмената [universal_translator.py](Prac1/PR1_1/universal_translator.py) описанного выше.
 
-Для реализации задачи нам нужно было написать код содержащий в себе математические функции разной сложности для базового языка был выбран питон в результате чего был написанн данный код [TestFib-Rec.py](PR1_3/TestFib-Rec.py)
+Для реализации задачи нам нужно было написать код содержащий в себе математические функции разной сложности для базового языка был выбран питон в результате чего был написанн данный код [TestFib-Rec.py](Prac1/PR1_3/TestFib-Rec.py)
 
 Работа данного кода выглядит следующим образом:
 ![6.png](Prac1/photos/6.png)
@@ -173,10 +176,10 @@ def complex_math(n, x, y):
 
 Для проверки выбрал язык **Rust** и **Java**
 
-Вывод программы на языке **Java**: [output.java](PR1_3/output.java)
+Вывод программы на языке **Java**: [output.java](Prac1/PR1_3/output.java)
 ![7.png](Prac1/photos/7.png)
 
-Вывод программы на языке **Rust**: [output.rust](PR1_3/output.rust)
+Вывод программы на языке **Rust**: [output.rust](Prac1/PR1_3/output.rust)
 ![8.png](Prac1/photos/8.png)
 
 ---
@@ -193,7 +196,7 @@ def complex_math(n, x, y):
 
 Для автоматического портирования кода с Windows на Linux разработан транслятор на Python, использующий **LLM (qwen3-coder:30b)** через локальный сервер **Ollama**.
 
-Программа [API_translator(Win-Lin).py](PR2_2/API_translator%28Win-Lin%29.py):
+Программа [API_translator(Win-Lin).py](Prac2/PR2_2/API_translator%28Win-Lin%29.py):
 - Читает файлы с Windows‑специфичным кодом из папки `InputCode`.
 - Формирует промпт с жёсткими правилами замены Windows API на POSIX‑аналоги.
 - Передаёт код LLM для переписывания.
@@ -236,7 +239,7 @@ def complex_math(n, x, y):
 
 ## Листинг кода
 
-Исходный код транслятора: [API_translator(Win-Lin).py](PR2_2/API_translator%28Win-Lin%29.py)
+Исходный код транслятора: [API_translator(Win-Lin).py](Prac2/PR2_2/API_translator%28Win-Lin%29.py)
 
 ```python
 import requests
@@ -286,7 +289,7 @@ PR2_2/
 ```
 ![2.png](Prac2/Kartochki/2.png)
 
-#### Входной файл [main.cpp](PR2_2/InputCode/main.cpp)
+#### Входной файл [main.cpp](Prac2/PR2_2/InputCode/main.cpp)
 ```cpp
 #include <windows.h>
 #include <iostream>
@@ -350,7 +353,7 @@ cd PR2_2
 python API_translator(Win-Lin).py
 ```
 
-#### Выходной файл [main.cpp](PR2_2/OutputCode/main.cpp)
+#### Выходной файл [main.cpp](Prac2/PR2_2/OutputCode/main.cpp)
 ```cpp
 #include <unistd.h>
 #include <fcntl.h>
@@ -467,7 +470,7 @@ arr = nullptr;
 
 ### Листинг кода
 
-Исходный код: [main.cpp](PR2_3/main.cpp)
+Исходный код: [main.cpp](Prac2/PR2_3/main.cpp)
 
 ```cpp
 #include <iostream>
@@ -582,7 +585,7 @@ g++ -std=c++11 main.cpp -o safe_ptr
 
 ### Листинг кода
 
-Исходный код: [main.py](PR2_1/main.py)
+Исходный код: [main.py](Prac2/PR2_1/main.py)
 
 ```python
 import concurrent.futures
@@ -690,7 +693,7 @@ python main.py
     
 ### Листинг кода
 
-Исходный код основного файла: [main.py](PR5_1/main.py)
+Исходный код основного файла: [main.py](Prac5/PR5_1/main.py)
 
 ```python
 import tkinter as tk
@@ -705,13 +708,13 @@ class ModernAnalyzer:
 
 ### Пример использования
 
-1. Запустите [main.py](PR5_1/main.py).  
+1. Запустите [main.py](Prac5/PR5_1/main.py).  
 2. Нажмите кнопку **«Открыть файл»**.  
-3. Выберите любой текстовый файл (например, [test.txt](../Prac1/PR1_2/test.txt) с произвольным содержимым).  
+3. Выберите любой текстовый файл (например, [test.txt](Prac1/PR1_2/test.txt) с произвольным содержимым).  
 4. Дождитесь завершения анализа — прогресс-бар заполнится.  
 5. Переключайте вкладки для просмотра отчёта и частотного словаря.  
 
-**Пример содержимого [test.txt](../Prac1/PR1_2/test.txt):**
+**Пример содержимого [test.txt](Prac1/PR1_2/test.txt):**
 ```
 На европейские события в 1854 году
 
@@ -782,6 +785,8 @@ project/
 ├── main.cpp           # Основная программа, использующая библиотеку
 └── Makefile           # Универсальный Makefile для сборки под разные ОС
 ```
+**Папка проекта** [PR5_2](Prac5/PR5_2)
+
 ![5.png](Prac5/Kartinki/5.png)
 
 ### Сборка и использование
@@ -844,7 +849,7 @@ make clean           # удаляет все сгенерированные фа
 
 ## Принцип работы
 
-### 1. Заголовочный файл [mylib.h](PR5_2/mylib/mylib.h)
+### 1. Заголовочный файл [mylib.h](Prac5/PR5_2/mylib/mylib.h)
 
 Использует условную компиляцию для определения макроса `MYLIB_API`:
 
@@ -864,7 +869,7 @@ make clean           # удаляет все сгенерированные фа
 - При использовании библиотеки из программы (`MYLIB_EXPORTS` не определён) символы **импортируются**.
 - На платформах, отличных от Windows, макрос пустой (экспорт/импорт не требуется).
 
-#### 2. Реализация [mylib.cpp](PR5_2/mylib/mylib.cpp)
+#### 2. Реализация [mylib.cpp](Prac5/PR5_2/mylib/mylib.cpp)
 
 Содержит простые функции:
 ```cpp
@@ -872,7 +877,7 @@ int add(int a, int b) { return a + b; }
 void print_message(const char* msg) { std::cout << "Library says: " << msg << std::endl; }
 ```
 
-#### 3. Основная программа [main.cpp](PR5_2/main.cpp)
+#### 3. Основная программа [main.cpp](Prac5/PR5_2/main.cpp)
 
 Подключает библиотеку через `#include "mylib/mylib.h"` и вызывает её функции:
 
@@ -909,11 +914,11 @@ clean:
 	rm -f *.o *.a *.so main_*
 ```
 
-> Полный Makefile с поддержкой Windows (через условные конструкции) прилагается в проекте.
+> Полный [Makefile](Prac5/PR5_2/Makefile) с поддержкой Windows (через условные конструкции) прилагается в проекте.
 
 ### Листинг кода
 
-#### `mylib.h` – заголовочный файл библиотеки
+#### [mylib.h](Prac5/PR5_2/mylib/mylib.h) – заголовочный файл библиотеки
 ```cpp
 #ifndef MYLIB_H
 #define MYLIB_H
@@ -934,7 +939,7 @@ MYLIB_API void print_message(const char* msg);
 #endif
 ```
 
-#### `mylib.cpp` – реализация библиотеки
+#### [mylib.cpp](Prac5/PR5_2/mylib/mylib.cpp) – реализация библиотеки
 ```cpp
 #include <iostream>
 #include "mylib.h"
@@ -948,7 +953,7 @@ void print_message(const char* msg) {
 }
 ```
 
-#### `main.cpp` – основная программа
+#### [main.cpp](Prac5/PR5_2/main.cpp)– основная программа
 ```cpp
 #include <iostream>
 #include "mylib/mylib.h"
@@ -1025,7 +1030,7 @@ g++ new_main.cpp -I/path/to/include -L/path/to/lib -lmylib -Wl,-rpath,/path/to/l
 ---
 ### Реализация:
 
-Для начала был написан код генерирующий достаточно больше количество числовых значений [generator.py](PR6_1/generator.py).
+Для начала был написан код генерирующий достаточно больше количество числовых значений [generator.py](Prac6/PR6_1/generator.py)
 Принцип работы которого достаточно прост:
 
 **Данный код генерирует текстовый файл с большим количеством случайных чисел:**
@@ -1033,11 +1038,11 @@ g++ new_main.cpp -I/path/to/include -L/path/to/lib -lmylib -Wl,-rpath,/path/to/l
 2. В цикле (1 000 000 итераций) генерируется случайное вещественное число от -1000 до 1000, округлённое до двух знаков после запятой.
 3. Каждое число записывается в строку через пробел.
 4. После каждых 10 чисел добавляется перевод строки (для удобочитаемости файла).
-5. В итоге создаётся файл [numbers.txt](PR6_1/numbers.txt) с миллионом чисел.
+5. В итоге создаётся файл [numbers.txt](Prac6/PR6_1/numbers.txt) с миллионом чисел.
 
 После можно было приступить к реализации кода решающего поставленную нам задачу.
-Для этого был написан [main.py](PR6_1/main.py).
-### Принцип работы `main.py` (подробно)
+Для этого был написан [main.py](Prac6/PR6_1/main.py).
+### Принцип работы [main.py](Prac6/PR6_1/main.py) (подробно)
 
 Этот скрипт читает текстовый файл с числами, выполняет **расширенный статистический анализ** и сохраняет отчёт.
 
@@ -1091,7 +1096,7 @@ g++ new_main.cpp -I/path/to/include -L/path/to/lib -lmylib -Wl,-rpath,/path/to/l
 - Вызывается анализ.
 
 ---
-### Вот какой вывод программы получается на входных данных записаных в файле [numbers.txt](PR6_1/numbers.txt): 
+### Вот какой вывод программы получается на входных данных записаных в файле [numbers.txt](Prac6/PR6_1/numbers.txt): 
 ![1.png](Prac6/Pichers/1.png)
 
-### Помимо этого данный отчет дублируется в качестве .txt файла с названием: [report.txt](PR6_1/report.txt).
+### Помимо этого данный отчет дублируется в качестве .txt файла с названием: [report.txt](Prac6/PR6_1/report.txt).
