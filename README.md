@@ -1,5 +1,4 @@
 ## Ссылка на репозиторий гитхаб:
-**https://github.com/MrFandore/Portirovanie_PO**
 
 # Задание 1-3 (Рабочая тетрадь 1)
 
