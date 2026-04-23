@@ -1,9 +1,9 @@
 #include <unistd.h>
 #include <fcntl.h>
+#include <sys/mman.h>
 #include <sys/stat.h>
 #include <iostream>
 #include <vector>
-#include <cstring>
 
 int main() {
     // Путь к файлу

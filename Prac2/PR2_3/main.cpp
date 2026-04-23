@@ -27,7 +27,7 @@ public:
         std::strcpy(data, str);
     }
 
-    // Конструктор копирования (глубокая копия)
+    // Конструктор копирования
     SafeString(const SafeString& other) : data(nullptr), length(other.length) {
         if (!other.data) {
             return;
@@ -91,7 +91,6 @@ void processNumber(int* ptr) {
 }
 
 int main() {
-    // --- Работа с простым указателем ---
     int* number = new(std::nothrow) int;
 
     if (!number) {
@@ -128,7 +127,6 @@ int main() {
     delete[] arr;
     arr = nullptr;
 
-    // --- Работа с классом ---
     SafeString str1("Привет");
     SafeString str2 = str1;  // копирование
     SafeString str3("Мир");

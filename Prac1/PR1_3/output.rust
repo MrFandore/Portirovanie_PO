@@ -35,5 +35,5 @@ fn complex_math(n: i32, x: f64, y: f64) -> f64 {
     // итоговая формула
     let result = add + sub + mul + div + power as f64 + fact as f64 + fib as f64;
 
-    result
+    return(result)
 }

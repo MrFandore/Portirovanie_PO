@@ -30,4 +30,3 @@ def complex_math(n, x, y):
     result = add + sub + mul + div + power + fact + fib
 
     return result
-

@@ -5,13 +5,12 @@ import subprocess
 import tempfile
 from typing import Optional
 
-
 class WinToLinuxTranslator:
     def __init__(
             self,
             model: str = "qwen3-coder:30b",
             ollama_url: str = "http://127.0.0.1:11434/api/generate",
-            verify_compile: bool = False
+            verify_compile: bool = True
     ):
         self.model = model
         self.ollama_url = ollama_url
@@ -79,7 +78,6 @@ class WinToLinuxTranslator:
             tmp_path = tmp.name
 
         try:
-            # -fsyntax-only позволяет проверить корректность без создания бинарника
             result = subprocess.run(
                 ["g++", "-fsyntax-only", "-pthread", tmp_path],
                 capture_output=True,

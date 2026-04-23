@@ -7,7 +7,6 @@ int main() {
     LPCSTR fileName = "data.txt";
 
     // 1. Создание/Открытие файла
-    // Аналог в Linux: open()
     HANDLE hFile = CreateFileA(
         fileName,               // Имя файла
         GENERIC_READ,           // Режим доступа: только чтение
@@ -29,7 +28,6 @@ int main() {
     DWORD bytesRead = 0;
 
     // 2. Чтение файла
-    // Аналог в Linux: read()
     BOOL result = ReadFile(
         hFile,                  // Хэндл файла
         buffer,                 // Буфер для данных
@@ -47,7 +45,6 @@ int main() {
     }
 
     // 3. Закрытие хэндла
-    // Аналог в Linux: close()
     CloseHandle(hFile);
 
     return 0;

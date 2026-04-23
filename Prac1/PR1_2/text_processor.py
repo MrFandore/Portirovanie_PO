@@ -39,12 +39,6 @@ def read_file(file_path):
         raise ValueError(f"Неподдерживаемый формат: {ext}")
 
 def analyze_text(text):
-    """
-    Анализирует текст и возвращает статистику:
-    - количество символов (с пробелами)
-    - количество слов
-    - количество предложений (по . ! ?)
-    """
     char_count = len(text)
     word_count = len(text.split())
     sentence_endings = {'.', '!', '?'}
@@ -76,7 +70,6 @@ def main():
         print(f"Символов: {stats['characters']}")
         print(f"Слов: {stats['words']}")
         print(f"Предложений: {stats['sentences']}")
-        # Показываем первые 200 символов текста
         print("\n--- Первые 200 символов текста ---")
         print(text[:200] + ("..." if len(text) > 200 else ""))
     except Exception as e:

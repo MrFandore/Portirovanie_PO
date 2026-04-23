@@ -3,7 +3,6 @@ import os
 import time
 from decimal import Decimal, getcontext
 
-# Tочность для сложных вычислений
 getcontext().prec = 50
 
 def is_prime(n):
@@ -13,7 +12,6 @@ def is_prime(n):
     for i in range(3, int(math.sqrt(n)) + 1, 2):
         if n % i == 0: return False
     return True
-
 
 def run_comprehensive_analysis(input_path, output_path):
     start_time = time.perf_counter()
